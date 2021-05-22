@@ -1,0 +1,226 @@
+{% extends 'shop/basic.html' %}
+{% block title %}About Us - WebShopee{% endblock %}
+{%block css%}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    padding: 0;
+    margin: 0
+}
+
+.menu {
+    width: 44px;
+    position: relative;
+    top: -10px;
+    height: 3px;
+    background: #00000054;
+    box-shadow: 0px 11px #ff00006b, 1px 22px #66b78d
+}
+
+nav {
+    padding: 8px;
+    height: 44px;
+    color: #909090;
+    font-weight: lighter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+h2 {
+    font-weight: lighter
+}
+
+header {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15)
+}
+
+.about {
+    text-align: center;
+    color: gray;
+    padding: 40px
+}
+
+.title {
+    font-size: 22px;
+    color: #2c2c2c
+}
+
+.desc {
+    color: #909090;
+    font-weight: 300;
+    font-size: 1.1em;
+    line-height: 1.45em;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    width: 70%;
+    margin: 0 auto
+}
+
+@media (max-width: 630px) {
+    .title {
+        font-size: 18px
+    }
+}
+
+.row {
+    width: 95%;
+    display: flex;
+    padding: 10px;
+    justify-content: center
+}
+
+@media (max-width: 494px) {
+    .row {
+        flex-direction: column
+    }
+}
+
+.card {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px
+}
+
+.card_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 9px 30px -6px rgba(24, 206, 15, 0.3);
+    position: relative;
+    transition: transform .4s
+}
+
+.fas,
+.fab {
+    display: inline-block;
+    position: absolute;
+    color: #63b563;
+    transform: translate(-52%, 75%);
+    font-size: 40px
+}
+
+.card_title {
+    font-size: 20px;
+    margin: 12px;
+    font-weight: bold;
+    color: #000000a8;
+    transition: color .2s
+}
+
+.card:hover .card_title {
+    color: #4bd482
+}
+
+.card:hover .card_img {
+    transform: translate(0px, -10px)
+}
+
+.card_body {
+    color: #8c9490;
+    font-size: 16px;
+    padding: 0 5px;
+    line-height: 1.5;
+    word-spacing: 4px
+}
+{%endblock%}
+
+{% block body %}
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<header>
+    <nav>
+        <h2> </h2>
+        <div class="menu"></div>
+    </nav>
+</header>
+<main>
+    <div class="about">
+        <div class="title">
+            <h1>About WebShopee</h1>
+        </div>
+        <div class="desc">
+            <p>Welcome to WebShopee, your number one source for all things [product, ie: shoes, bags, dog treats]. We're dedicated to giving you the very best of [product], with a focus on [three characteristics, ie: dependability, customer service and uniqueness.]
+Founded in [year] by [founder's name], [store name] has come a long way from its beginnings in a [starting location, ie: home office, toolshed, Houston, TX.]. When [store founder] first started out, his/her passion for [passion of founder, ie: helping other parents be more eco-friendly, providing the best equipment for his fellow musicians] drove him to [action, ie: do intense research, quit her day job], and gave him the impetus to turn hard work and inspiration into to a booming online store. We now serve customers all over [place, ie: the US, the world, the Austin area], and are thrilled to be a part of the [adjective, ie: quirky, eco-friendly, fair trade] wing of the [industry type, ie: fashion, baked goods, watches] industry.
+
+We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+ </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card_img"> <i class="fas fa-rocket"></i> </div>
+            <div class="card_title"></div>
+            <div class="card_body">
+                <p></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_img"> <i class="fab fa-cloudversify"></i> </div>
+            <div class="card_title"></div>
+            <div class="card_body">
+                <p></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_img"> <i class="fas fa-user-astronaut"></i> </div>
+            <div class="card_title"></div>
+            <div class="card_body">
+                <p style="color:red !important"></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+{% block js %}
+<script>
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+console.log(cart);
+var sum = 0;
+var totalPrice=0;
+if ($.isEmptyObject(cart)) {
+    //if object is empty
+    mystr = `<p>Your cart is empty, please add some items to your cart before checking out!</p>`
+    $('#items').append(mystr);
+} else {
+    for (item in cart) {
+        let name = cart[item][1];
+        let qty = cart[item][0];
+        let itemPrice = cart[item][2];
+        sum = sum + qty;
+        totalPrice=totalPrice + qty * itemPrice
+        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span class="badge badge-primary badge-pill">${qty}</span>
+                </li>`
+        $('#items').append(mystr);
+    }
+}
+document.getElementById('cart').innerHTML = sum;
+document.getElementById('totalPrice').innerHTML = totalPrice;
+$('#itemsJson').val(JSON.stringify(cart));
+{% if thank %}
+alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+localStorage.clear();
+document.location = "/shop";
+{% endif %}
+$('#amount').val($('#totalPrice').html())
+</script>
+{% endblock %}
+

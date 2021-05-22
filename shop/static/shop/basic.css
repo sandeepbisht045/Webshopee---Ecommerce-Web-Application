@@ -1,0 +1,9 @@
+.navbar-brand:hover{
+    background-color:gold; 
+    border-radius: 15px;
+} 
+
+.nav-link:hover{
+    background-color: red !important; 
+    border-radius: 10px;
+} 

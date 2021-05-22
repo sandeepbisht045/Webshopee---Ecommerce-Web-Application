@@ -1,0 +1,86 @@
+{% extends 'shop/basic.html' %}
+{% block title %}Login - WebShopee{% endblock %}
+{%load static%}
+{% block css %}    body{background-image: url({% static 'shop/bglogin.jpg' %});
+
+
+}
+
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="container mt-4" >
+
+    <div class="p-4 m-4">
+<div style="color: pink;">
+    <b>{{alert}}</b>
+</div>
+
+        <div class="col-lg-4 rounded mx-auto  pt-4">
+            <div class="text-center col">
+
+                <img
+                src="{% static 'shop/cart.png' %}" alt=""
+                class="" style="height: 150px;">
+            <!-- <hr> -->
+            <div class="display-8"> <b></b> </div>
+            <hr>
+            </div>
+            <h3 hidden class="alert alert-light border rounded"></h3>
+            <form action="/shop/login" method="POST">
+
+                {% csrf_token %}
+
+
+
+
+    <!-- email -->
+                <div class="form-group ">
+                 <b>   <label for="">Email / Mobile Phone</label>  </b>
+                    <input required type="text" name="text" id=""
+                    value="{{credential}}"
+                  class=" form-control-sm form-control"  placeholder="Enter Email or Phone"> 
+                </div>
+
+                <div class="form-group ">
+                <b>    <label for="">Password</label>    </b>
+                    <input type="password" required
+                    name="password1"
+                    id=""
+                     class="form-control form-control-sm" placeholder="Enter Password">
+                </div>
+
+
+                <hr>
+                <div class="form-group ">
+                 <b>   <input class="btn btn-primary" type="submit" required value="Login">
+                </div>    </b>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+#particles-js{
+    /* background-image: linear-gradient(rgba(0,0,50,0.5),rgba(0,0,0,0.5)),url(shop/homepage.jpg); */
+    background-color: red;
+    height: 100vh;
+    overflow: hidden;
+    background-size: 100% 100%;
+
+
+}
+/* ________________________________________________________________________________________________________ */
+/* #particles-js { */
+	/* position: relative; */
+	/* text-align:center; */
+	/* color: white; */
+
+  /* } */
+
+
+  .shop {
+	position: absolute;
+	top: 180px;
+	left: 36px;
+	animation: shop_effect 3s linear infinite;
+  }
+
+  #bt{
+	  border-radius: 15px;
+	  width: 240px;
+	  height: 70px;
+	  color: white;
+
+
+	  border-color:pink ;
+
+	  background-color:green;
+	  font-size: 28px;
+
+  }
+#bt:hover{color:red;
+	background-color: rgb(1, 253, 1);
+}
+
+  .welcome{
+	position: absolute;
+	top: 518px;
+	left: 450px;
+	width: 566px;  }
+
+  h5{
+	  border: 2px solid white;
+	  font-style: italic;
+	  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	  border-radius: 20px;
+	  background-color:blue;
+	  font-size: 40px;
+	  padding: 10px;
+	  border-left: 12px;
+	  text-align: center;
+  }
+
+
+  .signup{
+	position: absolute;
+	top: 250px;
+	right:110px;
+	color:white
+  }
+
+  #bt1{
+	  background-color: red;
+	  border-radius: 20px;
+	  width: 240px;
+	  height: 70px;
+	  color: white;
+	  font-size: 20px;
+	  border-color: red;
+
+  }
+  #bt1:hover{background-color:gold;
+border-radius: 5px;
+}
+
+
+  .login{
+	position: absolute;
+	top:400px;
+	right:110px;
+  }
+
+  #bt2{
+	  background-color: red;
+	  border-radius: 10px;
+	  width: 240px;
+	  height: 70px;
+	  color: white;
+	  font-size: 20px;
+	  border-color: red;}
+	  #bt2:hover{background-color: gold};
+
+
+	  .ml6{
+		position: relative;
+		top: 450px;
+		/* right:210px; */
+		color:white
+	  }
+
+
+	  .ml6 .text-wrapper {
+		position: absolute;
+		display: inline-block;
+		padding-top: 0.2em;
+		padding-right: 0.05em;
+		padding-bottom: 0.1em;
+		overflow: hidden;
+		color: rgb(197, 20, 20);
+		font-size: 50px;
+		font-family: cursive;
+		top: 250px;
+		right:550px;
+	  }
+
+	  .ml6 .letter {
+		display: inline-block;
+		line-height: 1em;
+	  }
+
+	  .text-wrapper:hover{
+		  font-size: 80px;
+		  font-family: Brush Script MT, Brush Script Std, cursive;
+
+	  }
+
+	  .user{
+		position: absolute;
+		top: 150px;
+		right:680px;
+		font-size: 60px;
+		font-family: Brush Script MT, Brush Script Std, cursive	;
+		color:rgb(233, 25, 60);
+		animation:effect  5s linear infinite;
+	  }
+
+	  @keyframes effect{
+		0%{right: 680px;}
+		25%{right:730px;color:blue;}
+		50%{right:780px;color:violet}
+		75%{right: 730px;}
+		100%{right: 680px;}
+ }
+
+@keyframes shop_effect{
+	0%{opacity: 1;}
+	25%{opacity: 0.8;}
+	50%{opacity: 0.3;}
+	75%{opacity: 0.7;}
+	100%{opacity: 0.9;}
+}
+
+
+.logo{
+	position: absolute;
+		top: -50px;
+		right:200px;
+		height: 6px;
+		width: 10px;
+}
